@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavBar from './TopNavBar';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaArrowRight, FaShoppingCart } from 'react-icons/fa';
 
 
 const NavBar = () => {
@@ -24,6 +24,7 @@ const NavBar = () => {
             <FaShoppingCart></FaShoppingCart>
             <div className="badge badge-secondary">+99</div>
         </button>
+        <li><a>Register</a></li>
     </>
 
     return (
@@ -47,7 +48,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <a className="btn">Login <FaArrowRight></FaArrowRight> </a>
                 </div>
             </div>
         </div>
