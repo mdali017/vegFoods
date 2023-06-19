@@ -1,0 +1,163 @@
+[
+    {
+      "id": 1,
+      "image": "https://images.pexels.com/photos/1297248/pexels-photo-1297248.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Carrot",
+      "price": 1.99,
+      "shortDescription": "Fresh and crunchy carrots.",
+      "categoryName": "Root Vegetables"
+    },
+    {
+      "id": 2,
+      "image": "https://images.pexels.com/photos/1367242/pexels-photo-1367242.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Tomato",
+      "price": 0.99,
+      "shortDescription": "Juicy and ripe tomatoes.",
+      "categoryName": "Fruits"
+    },
+    {
+      "id": 3,
+      "image": "https://images.pexels.com/photos/7879788/pexels-photo-7879788.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Broccoli",
+      "price": 2.49,
+      "shortDescription": "Nutritious and delicious broccoli florets.",
+      "categoryName": "Leafy Vegetables"
+    },
+    {
+      "id": 4,
+      "image": "https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Spinach",
+      "price": 1.49,
+      "shortDescription": "Dark green and iron-rich spinach leaves.",
+      "categoryName": "Leafy Vegetables"
+    },
+    {
+      "id": 5,
+      "image": "https://images.pexels.com/photos/128420/pexels-photo-128420.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Cucumber",
+      "price": 0.79,
+      "shortDescription": "Cool and refreshing cucumbers.",
+      "categoryName": "Gourds"
+    },
+    {
+      "id": 6,
+      "image": "https://images.pexels.com/photos/594137/pexels-photo-594137.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Bell Pepper",
+      "price": 1.29,
+      "shortDescription": "Vibrant and colorful bell peppers.",
+      "categoryName": "Fruits"
+    },
+    {
+      "id": 7,
+      "image": "https://images.pexels.com/photos/102123/pexels-photo-102123.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Lettuce",
+      "price": 0.99,
+      "shortDescription": "Crisp and leafy lettuce.",
+      "categoryName": "Leafy Vegetables"
+    },
+    {
+      "id": 8,
+      "image": "https://images.pexels.com/photos/2741620/pexels-photo-2741620.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Zucchini",
+      "price": 1.79,
+      "shortDescription": "Versatile and tender zucchini.",
+      "categoryName": "Gourds"
+    },
+    {
+      "id": 9,
+      "image": "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Potato",
+      "price": 0.89,
+      "shortDescription": "Starchy and satisfying potatoes.",
+      "categoryName": "Root Vegetables"
+    },
+    {
+      "id": 10,
+      "image": "https://images.pexels.com/photos/533342/pexels-photo-533342.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "vegetableName": "Onion",
+      "price": 0.69,
+      "shortDescription": "Flavorful and aromatic onions.",
+      "categoryName": "Bulb Vegetables"
+    },
+    {
+      "id": 11,
+      "image": "path/to/image11.jpg",
+      "vegetableName": "Cabbage",
+      "price": 1.49,
+      "shortDescription": "Crunchy and nutritious cabbage.",
+      "categoryName": "Leafy Vegetables"
+    },
+    {
+      "id": 12,
+      "image": "path/to/image12.jpg",
+      "vegetableName": "Eggplant",
+      "price": 1.69,
+      "shortDescription": "Versatile and hearty eggplants.",
+      "categoryName": "Fruits"
+    },
+    {
+      "id": 13,
+      "image": "path/to/image13.jpg",
+      "vegetableName": "Peas",
+      "price": 1.29,
+      "shortDescription": "Sweet and tender garden peas.",
+      "categoryName": "Legumes"
+    },
+    {
+      "id": 14,
+      "image": "path/to/image14.jpg",
+      "vegetableName": "Cauliflower",
+      "price": 2.29,
+      "shortDescription": "Versatile and nutritious cauliflower.",
+      "categoryName": "Flower Vegetables"
+    },
+    {
+      "id": 15,
+      "image": "path/to/image15.jpg",
+      "vegetableName": "Green Beans",
+      "price": 1.39,
+      "shortDescription": "Crisp and flavorful green beans.",
+      "categoryName": "Legumes"
+    },
+    {
+      "id": 16,
+      "image": "path/to/image16.jpg",
+      "vegetableName": "Radish",
+      "price": 0.99,
+      "shortDescription": "Refreshing and tangy radishes.",
+      "categoryName": "Root Vegetables"
+    },
+    {
+      "id": 17,
+      "image": "path/to/image17.jpg",
+      "vegetableName": "Sweet Potato",
+      "price": 1.99,
+      "shortDescription": "Naturally sweet and nutritious sweet potatoes.",
+      "categoryName": "Root Vegetables"
+    },
+    {
+      "id": 18,
+      "image": "path/to/image18.jpg",
+      "vegetableName": "Mushroom",
+      "price": 2.49,
+      "shortDescription": "Savory and versatile mushrooms.",
+      "categoryName": "Fungi"
+    },
+    {
+      "id": 19,
+      "image": "path/to/image19.jpg",
+      "vegetableName": "Cilantro",
+      "price": 0.79,
+      "shortDescription": "Fragrant and flavorful cilantro leaves.",
+      "categoryName": "Herbs"
+    },
+    {
+      "id": 20,
+      "image": "path/to/image20.jpg",
+      "vegetableName": "Beetroot",
+      "price": 1.59,
+      "shortDescription": "Colorful and earthy beetroot.",
+      "categoryName": "Root Vegetables"
+    }
+  ]
+  
