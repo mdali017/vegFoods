@@ -10,6 +10,7 @@ const FeatureProducts = () => {
          .then(res => res.json())
          .then(data => {
             const featureProducts = data.filter(item => item.price < 1)
+            // console.log(featureProducts, 13)
             setFproducts(featureProducts)
          })
     }, [])
