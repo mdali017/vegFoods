@@ -1,12 +1,14 @@
 import React from 'react';
 import TopNavBar from './TopNavBar';
 import { FaArrowRight, FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
 
     const navOptions = <>
-        <li><a>Home</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/our-item'>Our Item</Link></li>
         <li tabIndex={0}>
             <details>
                 <summary>Shop</summary>

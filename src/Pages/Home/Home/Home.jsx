@@ -5,10 +5,14 @@ import CategorySection from '../CategorySection/CategorySection';
 import FeatureProducts from '../FeatureProducts/FeatureProducts';
 import DealsSection from '../DealsSection/DealsSection';
 import Testimonials from '../Testimonials/Testimonials';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>VEGFOODS || Home</title>
+            </Helmet>
             <Banner></Banner>
             <SupportSection></SupportSection>
             <CategorySection></CategorySection>
