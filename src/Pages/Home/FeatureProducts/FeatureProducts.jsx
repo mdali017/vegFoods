@@ -3,15 +3,18 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import ProductCard from '../../Shared/ProductCard/ProductCard';
 
 const FeatureProducts = () => {
-    const [Fproducts, setFproducts] = useState();
+    const [Fproducts, setFproducts] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect( () => {
-         fetch('products.json')
+         fetch('http://localhost:4000/allproducts')
          .then(res => res.json())
          .then(data => {
+            setLoading(true)
             const featureProducts = data.filter(item => item.price < 1)
-            // console.log(featureProducts, 13)
+            console.log(featureProducts, 13)
             setFproducts(featureProducts)
+            
          })
     }, [])
 
@@ -23,10 +26,16 @@ const FeatureProducts = () => {
             <div className='grid grid-cols-3 gap-10 w-[1140px] mx-auto'>
                 {
                     Fproducts.map(Fproduct => <ProductCard 
-                        key={Fproduct.id}
-                        Fproduct={Fproduct}
+                        key={Fproduct._id}
+                        FproductAll={Fproduct}
                         ></ProductCard>)
                 }
+                {/* {
+                    Fproducts.map( item => <ProductCard 
+                        key={item.id}
+                        itemS={item}
+                        ></ProductCard>)
+                } */}
             </div>
         </>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ProductCard = ({ Fproduct }) => {
-    console.log(Fproduct, 4)
-    const { image, vegetableName, price } = Fproduct;
+const ProductCard = ({ FproductAll }) => {
+    console.log(FproductAll, 4)
+    const { image, vegetableName, price } = FproductAll;
     return (
         <div>
             <div className=' w-[285px] h-[328px] border'>
