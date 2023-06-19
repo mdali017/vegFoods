@@ -6,16 +6,16 @@ const FeatureProducts = () => {
     const [Fproducts, setFproducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect( () => {
-         fetch('http://localhost:4000/allproducts')
-         .then(res => res.json())
-         .then(data => {
-            setLoading(true)
-            const featureProducts = data.filter(item => item.price < 1)
-            console.log(featureProducts, 13)
-            setFproducts(featureProducts)
-            
-         })
+    useEffect(() => {
+        fetch('http://localhost:4000/allproducts')
+            .then(res => res.json())
+            .then(data => {
+                setLoading(true)
+                const featureProducts = data.filter(item => item.price < 1)
+                console.log(featureProducts, 13)
+                setFproducts(featureProducts)
+
+            })
     }, [])
 
     return (
@@ -25,17 +25,21 @@ const FeatureProducts = () => {
             </div>
             <div className='grid grid-cols-3 gap-10 w-[1140px] mx-auto'>
                 {
-                    Fproducts.map(Fproduct => <ProductCard 
+                    Fproducts.map(Fproduct => <ProductCard
                         key={Fproduct._id}
                         FproductAll={Fproduct}
-                        ></ProductCard>)
+                    ></ProductCard>)
                 }
+
                 {/* {
                     Fproducts.map( item => <ProductCard 
                         key={item.id}
                         itemS={item}
                         ></ProductCard>)
                 } */}
+            </div>
+            <div className='text-center mt-10'>
+                <button className='btn btn-warning btn-outline'>See More</button>
             </div>
         </>
     );
