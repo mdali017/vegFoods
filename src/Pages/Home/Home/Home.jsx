@@ -6,6 +6,7 @@ import FeatureProducts from '../FeatureProducts/FeatureProducts';
 import DealsSection from '../DealsSection/DealsSection';
 import Testimonials from '../Testimonials/Testimonials';
 import { Helmet } from 'react-helmet-async';
+import SubcribeSection from '../SubcribeSection/SubcribeSection';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <FeatureProducts></FeatureProducts>
             <DealsSection></DealsSection>
             <Testimonials></Testimonials>
+            <SubcribeSection></SubcribeSection>
             <h1>This is Home</h1>
         </div>
     );

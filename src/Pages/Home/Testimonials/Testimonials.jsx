@@ -61,6 +61,7 @@ const Testimonials = () => {
 
 
             </Swiper>
+            <div className="divider"></div>
         </>
     );
 };
