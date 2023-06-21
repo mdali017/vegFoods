@@ -15,18 +15,22 @@ const OurItemPage = () => {
     const Vegetables = Fproduct.filter(item => item.categoryName === "Vegetables");
     const vegetables = Vegetables.slice(0, 9)
     const Fruits = Fproduct.filter(item => item.categoryName === "Fruits");
-    console.log(Vegetables, Fruits, 17)
+    
     return (
         <div>
             <Helmet>
                 <title>VEGFOODS | Our Items</title>
             </Helmet>
             <Cover img={img} title={"Our Items"}></Cover>
-            <MenuCategory items={allproducts}></MenuCategory>
-            <Cover img={vegetableImg} title={"Our Vegetable"}></Cover>
-            <MenuCategory items={vegetables}></MenuCategory>
-            <Cover img={fruitsImg} title={"Our Fruits"}></Cover>
-            <MenuCategory items={Fruits}></MenuCategory>
+
+            {/* MenuCategory Using for allproducts  */}
+            <MenuCategory items={allproducts} title={"allproducts"}></MenuCategory>
+
+            {/* MenuCategory Using for Our  */}
+            <Cover img={vegetableImg} title={"Vegetable"}></Cover>
+            <MenuCategory items={vegetables} title={"Vegetable"}></MenuCategory>
+            <Cover img={fruitsImg} title={"Fruits"}></Cover>
+            <MenuCategory items={Fruits} title={"Fruits"}></MenuCategory>
         </div>
     );
 };

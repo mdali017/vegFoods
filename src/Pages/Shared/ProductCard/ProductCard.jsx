@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProductCard = ({ FproductAll }) => {
-    console.log(FproductAll, 4)
+    // console.log(FproductAll, 4)
     const { image, vegetableName, price } = FproductAll;
     return (
         <div>

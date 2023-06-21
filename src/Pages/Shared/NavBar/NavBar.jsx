@@ -13,7 +13,7 @@ const NavBar = () => {
             <details>
                 <summary>Shop</summary>
                 <ul className="p-2">
-                    <li><a>Shop</a></li>
+                    <li><Link to='/shop'>Shop</Link></li>
                     <li><a>Cart</a></li>
                     <li><a>Checkout</a></li>
                 </ul>
