@@ -37,13 +37,6 @@ const FeatureProducts = () => {
                         FproductAll={Fproduct}
                     ></ProductCard>)
                 }
-
-                {/* {
-                    Fproducts.map( item => <ProductCard 
-                        key={item.id}
-                        itemS={item}
-                        ></ProductCard>)
-                } */}
             </div>
             <div className='text-center mt-10'>
                 <button className='btn btn-warning btn-outline'>See More</button>
