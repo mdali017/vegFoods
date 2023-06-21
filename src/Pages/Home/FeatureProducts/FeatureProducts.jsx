@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import ProductCard from '../../Shared/ProductCard/ProductCard';
+import useMenu from '../../../hooks/useMenu';
 
 const FeatureProducts = () => {
-    const [Fproducts, setFproducts] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [Fproduct] = useMenu();
+    const featureProducts = Fproduct.filter(item => item.price < 1);
 
-    useEffect(() => {
-        fetch('http://localhost:4000/allproducts')
-            .then(res => res.json())
-            .then(data => {
-                setLoading(true)
-                const featureProducts = data.filter(item => item.price < 1)
-                console.log(featureProducts, 13)
-                setFproducts(featureProducts)
 
-            })
-    }, [])
+    // ---------------------------------
+    // const [Fproducts, setFproducts] = useState([]);
+    // const [loading, setLoading] = useState(false);
+
+    // useEffect(() => {
+    //     fetch('http://localhost:4000/allproducts')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setLoading(true)
+    //             const featureProducts = data.filter(item => item.price < 1)
+    //             console.log(featureProducts, 13)
+    //             setFproducts(featureProducts)
+
+    //         })
+    // }, [])
+    // ----------------------------------
 
     return (
         <>
@@ -25,7 +32,7 @@ const FeatureProducts = () => {
             </div>
             <div className='grid grid-cols-3 gap-10 w-[1140px] mx-auto'>
                 {
-                    Fproducts.map(Fproduct => <ProductCard
+                    featureProducts.map(Fproduct => <ProductCard
                         key={Fproduct._id}
                         FproductAll={Fproduct}
                     ></ProductCard>)
