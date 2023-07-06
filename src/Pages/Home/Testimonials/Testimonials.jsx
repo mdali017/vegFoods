@@ -15,7 +15,7 @@ const Testimonials = () => {
         fetch('testimonials.json')
             .then(res => res.json())
             .then(data => {
-                console.log(data, 14)
+                
                 setTestimonials(data)
             })
     }, [])

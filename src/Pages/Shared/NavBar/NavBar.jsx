@@ -1,10 +1,30 @@
 import React from 'react';
 import TopNavBar from './TopNavBar';
 import { FaArrowRight, FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 
 const NavBar = () => {
+    const {user, logOut} = useContext(AuthContext);
+    
+    // const location = useLocation();
+    // console.log(location)
+
+    // const noHeaherAndFooter = location.pathname.includes('login');
+
+    const handleLogOut = () =>{
+        logOut()
+        .then( () =>{
+
+        })
+        .catch( error =>{
+            console.log(error)
+        })
+    }
+
+
 
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
@@ -22,11 +42,15 @@ const NavBar = () => {
         <li><a>About</a></li>
         <li><a>Blog</a></li>
         <li><a>Contact</a></li>
+        <li><Link to='/secret'>Secret</Link></li>
         <button className="btn">
             <FaShoppingCart></FaShoppingCart>
-            <div className="badge badge-secondary">+99</div>
+            <div className="badge badge-secondary">+0</div>
         </button>
-        <li><a>Register</a></li>
+       
+        {
+            user ?  "" : <li><Link to='/register'>Register</Link></li>
+        }
     </>
 
     return (
@@ -49,9 +73,13 @@ const NavBar = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Login <FaArrowRight></FaArrowRight> </a>
+                {
+                    user ? <div className="navbar-end">
+                    <Link onClick={handleLogOut}  className="btn">LogOut<FaArrowRight></FaArrowRight> </Link>
+                </div>  : <div className="navbar-end">
+                    <Link to='/login' className="btn">Login <FaArrowRight></FaArrowRight> </Link>
                 </div>
+                }
             </div>
         </div>
     );

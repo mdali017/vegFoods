@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Cover from '../../Shared/Cover/Cover';
 
 const MenuCategory = ({items, title}) => {
-    console.log(title, 7)
+    
     return (
         <div>
             <div className='grid grid-cols-3 gap-10 w-[1140px] mx-auto mt-10 '>
