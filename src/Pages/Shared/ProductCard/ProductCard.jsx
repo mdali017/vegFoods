@@ -2,19 +2,26 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useCart from '../../../hooks/useCart';
+
 
 const ProductCard = ({ FproductAll }) => {
     const {user} = useContext(AuthContext);
+    const [, refetch] = useCart()
+    // console.log(user, 9)
     const navigate = useNavigate();
+    const location = useLocation();
+
+
     // console.log(FproductAll, 4)
     const {_id,  image, vegetableName, price } = FproductAll;
 
     const handleAddToCart = (item) =>{
 
-        console.log(item, 9)
-        if(user && user?.email){
-            const cartsItem = { productItemId: _id, name, image, price, email: user?.email}
+        // console.log(item, 9)
+        if(user){
+            const cartsItem = { productItemId: _id, name:vegetableName, image, price, email: user?.email}
             fetch('http://localhost:4000/carts', {
                 method: "POST",
                 headers: {
@@ -25,30 +32,34 @@ const ProductCard = ({ FproductAll }) => {
             .then(res => res.json())
             .then(data =>{
                 if(data.insertedId){
+                   
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Product Added on the cart',
                         showConfirmButton: false,
                         timer: 1500
                       })
-                }else{
-                    Swal.fire({
-                        title: 'Please Login to Order This Product',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Login Now'
-                      }).then((result) => {
-                        if (result.isConfirmed) {
-                          navigate('/login')
-                        }
-                      })
+                      refetch()
                 }
+                 
             })
+        }else{
+            Swal.fire({
+                title: 'Please Login to Order This Product',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login', {state: {from: location}})
+                }
+              })
         }
+
     }
 
     return (

@@ -4,24 +4,28 @@ import { FaArrowRight, FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import useCart from '../../../hooks/useCart';
 
 
 const NavBar = () => {
-    const {user, logOut} = useContext(AuthContext);
-    
+    const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart();
+    // console.log(data)
+    // console.log(cart.length)
+
     // const location = useLocation();
     // console.log(location)
 
     // const noHeaherAndFooter = location.pathname.includes('login');
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then( () =>{
+            .then(() => {
 
-        })
-        .catch( error =>{
-            console.log(error)
-        })
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
 
@@ -43,13 +47,17 @@ const NavBar = () => {
         <li><a>Blog</a></li>
         <li><a>Contact</a></li>
         <li><Link to='/secret'>Secret</Link></li>
-        <button className="btn">
-            <FaShoppingCart></FaShoppingCart>
-            <div className="badge badge-secondary">+0</div>
-        </button>
-       
+        <li>
+            <Link to='/dashboard/mycart'>
+                <button className="btn">
+                    <FaShoppingCart></FaShoppingCart>
+                    <div className="badge badge-secondary">+{cart?.length || 0}</div>
+                </button>
+            </Link>
+        </li>
+
         {
-            user ?  "" : <li><Link to='/register'>Register</Link></li>
+            user ? "" : <li><Link to='/register'>Register</Link></li>
         }
     </>
 
@@ -75,10 +83,10 @@ const NavBar = () => {
                 </div>
                 {
                     user ? <div className="navbar-end">
-                    <Link onClick={handleLogOut}  className="btn">LogOut<FaArrowRight></FaArrowRight> </Link>
-                </div>  : <div className="navbar-end">
-                    <Link to='/login' className="btn">Login <FaArrowRight></FaArrowRight> </Link>
-                </div>
+                        <Link onClick={handleLogOut} className="btn">LogOut<FaArrowRight></FaArrowRight> </Link>
+                    </div> : <div className="navbar-end">
+                        <Link to='/login' className="btn">Login <FaArrowRight></FaArrowRight> </Link>
+                    </div>
                 }
             </div>
         </div>
