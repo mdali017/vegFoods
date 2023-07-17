@@ -4,6 +4,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
@@ -99,6 +100,7 @@ const Login = () => {
                         </div>
                     <p><small>NEW Here?? <Link to='/register' className='text-blue-600 font-semibold'>CREATE AN ACCOUNT</Link></small></p>
                     </form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
@@ -13,39 +14,54 @@ const Register = () => {
     const from = location.state?.from?.pathname || "/";
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        // console.log(data)
         reset()
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 updateUserProfile(data.name, data.photo)
-                .then( () => {})
-                .catch(error => console.log(error))
-                Swal.fire({
-                    title: 'User Created Successfully',
-                    showClass: {
-                      popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                      popup: 'animate__animated animate__fadeOutUp'
-                    }
-                  })
-                navigate(from, { replace: true });
+                    .then(() => {
+                              const savedUser = {name: data.name, email: data.email}
+                        fetch('http://localhost:4000/users', {
+                            method: "POST", 
+                            headers: {
+                                "content-type": "application/json"
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    Swal.fire({
+                                        title: 'User Created Successfully',
+                                        showClass: {
+                                            popup: 'animate__animated animate__fadeInDown'
+                                        },
+                                        hideClass: {
+                                            popup: 'animate__animated animate__fadeOutUp'
+                                        }
+                                    })
+                                    navigate(from, { replace: true });
+                                }
+                            })
+                    })
+                    .catch(error => console.log(error))
                 
-                
+
+
             })
             .catch(error => {
                 console.log(error)
                 Swal.fire({
                     title: 'Something is Wrong.. Please Try Again',
                     showClass: {
-                      popup: 'animate__animated animate__fadeInDown'
+                        popup: 'animate__animated animate__fadeInDown'
                     },
                     hideClass: {
-                      popup: 'animate__animated animate__fadeOutUp'
+                        popup: 'animate__animated animate__fadeOutUp'
                     }
-                  })
+                })
             })
     };
     return (
@@ -107,6 +123,7 @@ const Register = () => {
                             </div>
                             <p><small>Already Have An Account?? <Link to='/login' className='text-blue-600 font-semibold'>Please Login</Link></small></p>
                         </form>
+                            <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

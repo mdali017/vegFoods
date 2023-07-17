@@ -14,31 +14,31 @@ const AuthProvider = ({children}) => {
 
     // -------- Create User --------
     const createUser = (email, password) =>{
-       setLoading(false)
+       setLoading(true)
        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // -------- Sign In -----------
     const signIn = (email, password) =>{
-        setLoading(false);
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     // --------- sign In With Google ---------
     const signInWithGoogle = () =>{
-        setLoading(false);
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     // --------- Reset Password -----------
     const resetPassword = email =>{
-        setLoading(false);
+        setLoading(true);
         return sendPasswordResetEmail(auth, email);
     }
 
     // ---------- Sign Out -------------
     const logOut = () =>{
-        setLoading(false)
+        setLoading(true)
         return signOut(auth)
     }
 
@@ -56,7 +56,7 @@ const AuthProvider = ({children}) => {
             setUser(currentUser);
            
             console.log('current user', currentUser)
-            setLoading(false)
+            setLoading(true)
         })
         return () =>{
             return unsubscribe();

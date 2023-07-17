@@ -7,7 +7,7 @@ const PrivateRoutes = ({children}) => {
     console.log(loading, 7)
     const location = useLocation();
 
-    if(loading){
+    if(!loading){
         return <span className="loading loading-infinity loading-lg"></span>
     }
 

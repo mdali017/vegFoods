@@ -7,15 +7,15 @@ import useCart from '../../../hooks/useCart';
 
 
 const ProductCard = ({ FproductAll }) => {
+    const {_id,  image, vegetableName, price } = FproductAll;
     const {user} = useContext(AuthContext);
     const [, refetch] = useCart()
-    // console.log(user, 9)
     const navigate = useNavigate();
     const location = useLocation();
 
 
     // console.log(FproductAll, 4)
-    const {_id,  image, vegetableName, price } = FproductAll;
+    
 
     const handleAddToCart = (item) =>{
 
@@ -32,7 +32,7 @@ const ProductCard = ({ FproductAll }) => {
             .then(res => res.json())
             .then(data =>{
                 if(data.insertedId){
-                   
+                    refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -40,7 +40,7 @@ const ProductCard = ({ FproductAll }) => {
                         showConfirmButton: false,
                         timer: 1500
                       })
-                      refetch()
+                    //   refetch()
                 }
                  
             })
